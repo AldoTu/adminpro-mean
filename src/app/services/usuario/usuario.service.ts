@@ -19,6 +19,7 @@ export class UsuarioService {
   constructor(
     public http: HttpClient,
     public router: Router,
+    // tslint:disable-next-line: variable-name
     public _subirArchivoService: SubirArchivoService
   ){
     this.cargarStorage();
@@ -94,7 +95,6 @@ export class UsuarioService {
     .pipe(map((res: any) => {
       if (usuario._id === this.usuario._id){
         this.guardarStorage(res.usuario._id, this.token, res.usuario);
-        
       }
       swal('Usuario actualizado', usuario.nombre, 'success');
       return true;
